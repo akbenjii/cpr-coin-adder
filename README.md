@@ -12,10 +12,15 @@ https://nodejs.org/en/
 3. Install all dependecies:
 run "npm install"
 ```
+
 # Usage
 ```
 1. Insert the credentials of the penguin you want to use in config.json.
 2. Start the script using "node ." or "node coin-adder.js".
 3. 💰 Profit 💰 
 ```
+
+<center> 
 <b> Remember to add coins wisely, or face the magical ban hammer.</b>
+<p align="center"><img src="https://i.imgur.com/OvyJE3P.png" /></p>
+</center>
