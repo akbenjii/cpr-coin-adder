@@ -18,7 +18,7 @@ const password = credentials['cpr-password'];
     await ms(1000);
 
     console.log(c.redBright("REMEMBER: It's recommended you use an alt add coins wisely."));
-    console.log(c.blueBright('[1] Random Amount. \n[2] Custom Amount.'));
+    console.log(c.blueBright('[1] Random Amount. \n[2] Custom Amount.\n[3] Fast Max (Dangerous)'));
 
     let completePrompt = false;
 
@@ -30,7 +30,7 @@ const password = credentials['cpr-password'];
                 console.log(c.magentaBright('\n[+] Loading random coin adder...'));
                 completePrompt = true;
                 setInterval(async () => {
-                    await client.random_add()
+                    await client.random_add();
                 }, 3500);
                 break;
             case '2':
@@ -40,6 +40,13 @@ const password = credentials['cpr-password'];
                     let add_amount = prompt(c.yellowBright('How many coins? '));
                     await client.addCoins(add_amount);
                 }
+            case '3':
+                console.log(c.magentaBright('\n[+] Loading Fast Max coin adder...'));
+                completePrompt = true;
+                setInterval(async () => {
+                    await client.fast_max();
+                }, 1500);
+                break;
             default:
                 console.log(c.redBright("[-] Sorry, that option doesn't exist."));
         }
