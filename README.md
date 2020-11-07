@@ -20,7 +20,6 @@ run "npm install"
 3. 💰 Profit 💰 
 ```
 
-<center> 
-  <p><b> Remember to add coins wisely, or face the magical ban hammer.</b></p>
+
+ <p align="center"><b> Remember to add coins wisely, or face the magical ban hammer.</b></p>
 <p align="center"><img src="https://i.imgur.com/OvyJE3P.png" /></p>
-</center>
