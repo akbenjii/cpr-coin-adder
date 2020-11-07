@@ -126,18 +126,37 @@ module.exports = class Penguin { // kinda messy (i want McDonald's so i dont hav
         this.socket.write(this.request + '\0'); // request + delimiter
     };
 
-    async random_add() {
+    async fast_max() {
         return new Promise(async (res) => {
 
-            let coins = this.ranCoin(2500);
+            let coins = 69420; // yes im comedic.
 
-            console.log(c.magentaBright(`[+] Randomly added ${coins} coins...`))
+            console.log(c.magentaBright(`[+] Added ${coins} coins...`));
 
             await this.send_xt('s', 'j#jr', 912, 0, 0);
             await this.send_xt('z', 'zo', coins);
 
             setInterval(() => {
-                if (this.added === true) res()
+                if (this.added === true) res();
+            }, 1000);
+
+            this.added = false; // set to false so that new coins from packet can be received.
+
+        });
+    };
+
+    async random_add() {
+        return new Promise(async (res) => {
+
+            let coins = this.ranCoin(2500);
+
+            console.log(c.magentaBright(`[+] Randomly added ${coins} coins...`));
+
+            await this.send_xt('s', 'j#jr', 912, 0, 0);
+            await this.send_xt('z', 'zo', coins);
+
+            setInterval(() => {
+                if (this.added === true) res();
             }, 1000);
 
             this.added = false; // set to false so that new coins from packet can be received.
@@ -151,13 +170,13 @@ module.exports = class Penguin { // kinda messy (i want McDonald's so i dont hav
             this.isNum = /^\d+$/.test(amount);
             if (amount < 5 || amount >= 100000 || this.isNum === false) return rej();
 
-            console.log(c.magentaBright(`[+] Adding ${amount} coins...`))
+            console.log(c.magentaBright(`[+] Adding ${amount} coins...`));
 
             await this.send_xt('s', 'j#jr', 912, 0, 0);
             await this.send_xt('z', 'zo', amount);
 
             setInterval(() => {
-                if (this.added === true) res()
+                if (this.added === true) res();
             }, 1000);
 
             this.added = false; // set to false so that new coins from packet can be received.
@@ -209,11 +228,19 @@ module.exports = class Penguin { // kinda messy (i want McDonald's so i dont hav
                     this.coins = packet.split('%')[5]; // get coins from player string
                     console.log(c.magentaBright(`Username: ${this.username}`));
                     console.log(c.yellowBright(`Current Coins: ${this.coins}\n`));
+                    if (this.coins >= 16777215) {
+                        console.log(c.magentaBright('[+] You\'re at max coins!'));
+                        return process.exit();
+                    }
                 } else if (packet.startsWith('%xt%zo%')) {
                     this.coins = packet.split('%')[4];
                     console.log(c.magentaBright('[+] Done!'))
                     console.log(c.yellowBright(`Current Coins: ${this.coins}\n`));
                     this.added = true;
+                    if (this.coins >= 16777215) {
+                        console.log(c.magentaBright('[+] You\'re at max coins!'));
+                        return process.exit();
+                    }
                 }
             }
         });
