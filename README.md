@@ -18,4 +18,4 @@ run "npm install"
 2. Start the script using "node ." or "node coin-adder.js".
 3. 💰 Profit 💰 
 ```
-<center><b> Remember to add coins wisely, or face the magical ban hammer.</b></center>
+<b> Remember to add coins wisely, or face the magical ban hammer.</b>
