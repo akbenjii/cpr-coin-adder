@@ -129,7 +129,7 @@ module.exports = class Penguin { // kinda messy (i want McDonald's so i dont hav
     async fast_max() {
         return new Promise(async (res) => {
 
-            let coins = 69420; // yes im comedic.
+            let coins = 99990; // updated to push limit (literally use this if u just want to be banned)
 
             console.log(c.magentaBright(`[+] Added ${coins} coins...`));
 
