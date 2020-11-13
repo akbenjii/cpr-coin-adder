@@ -25,3 +25,6 @@ https://nodejs.org/en/
 
 <p align="center"><b> Remember to add coins wisely, or face the magical ban hammer.</b></p>
 <p align="center"><img src="https://i.imgur.com/OvyJE3P.png" /></p>
+
+# Support
+Join https://discord.gg/XsgAd3h4yw for support and updates on new hacks.
