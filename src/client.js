@@ -189,7 +189,7 @@ module.exports = class Penguin { // kinda messy (i want McDonald's so i dont hav
     };
 
     async send_xt(...args) {
-        args.splice(2, 0, (this.packet_code + 669567) ^ 842215, -1);
+        args.splice(2, 0, (this.packet_code + 529887) ^ 924175, -1);
         this.packet_code++;
         let packet = `%xt%${args.join('%')}%\0`; // yes, pain.
         this.socket.write(packet);
