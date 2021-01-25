@@ -1,3 +1,6 @@
+<h1 align="center"> DEPRECATED </h1>
+<p align="center"> Since January 12th, 2021, the coin adder will no longer work nor be supported. </p>
+
 <h1 align="center">💰  CPR Coin Adder 💰 </h1>
 
 
